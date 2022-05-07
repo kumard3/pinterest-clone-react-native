@@ -5,11 +5,11 @@ import { Image, Pressable, StyleSheet } from "react-native";
 import { Text, View } from "../components/Themed";
 
 interface pinType {
-  title: string;
-  image: string;
+  pin: { image: string; title: string };
 }
 
-const Pin = ({ title, image }: pinType) => {
+const Pin = (props: pinType) => {
+  const { image, title } = props.pin;
   const [ratio, setRatio] = useState(1);
   const onLike = () => {};
 
@@ -49,7 +49,6 @@ const styles = StyleSheet.create({
     lineHeight: 22,
     fontWeight: "600",
     margin: 5,
-    // color: "#181818",
   },
   image: {
     width: "100%",
